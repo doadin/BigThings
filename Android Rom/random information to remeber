@@ -1,0 +1,64 @@
+cd ~/CM10
+
+Rom
+. build/envsetup.sh
+lunch cm_ancora_tmo-userdebug
+brunch ancora_tmo
+
+recovery
+
+make -j4 recoveryimage
+
+Random nvidia fan setting
+Option "Coolbits" "5"
+
+Kernel
+
+cd /home/doadin/Desktop/kernel/samsung/ancora_tmo
+cd /home/doadin/Desktop/kernel/adc/build
+cd /home/doadin/Desktop/kernel/chris/build
+
+export ARCH=arm
+export SUBARCH=arm
+export CROSS_COMPILE=/home/doadin/CM10.1/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
+make ancora_tmo_defconfig
+make ancora_tmo_oc_vhm_defconfig
+make
+
+export CROSS_COMPILE=/home/doadin/Desktop/kernel/toolchains/arm-cortex_a8-linux-gnueabi-linaro_4.7.4-2013.05/bin/arm-gnueabi-
+
+export CROSS_COMPILE=/home/doadin/Desktop/kernel/toolchains/toolchains-2013.07/arm-cortex_a8-linux-gnueabi-linaro_4.7.4-2013.07/bin/arm-gnueabi-
+
+export CROSS_COMPILE=/home/doadin/Desktop/kernel/toolchains/toolchains-2013.08/arm-cortex_a8-linux-gnueabi-linaro_4.7.4-2013.08/bin/arm-gnueabi-
+
+export CROSS_COMPILE=/home/doadin/Desktop/kernel/toolchains/toolchains-2013.09/arm-cortex_a8-linux-gnueabi-linaro_4.7.4-2013.09/bin/arm-gnueabi-
+
+export CROSS_COMPILE=/home/doadin/Desktop/kernel/toolchains/toolchains-2013.10/arm-cortex_a8-linux-gnueabi-linaro_4.7.4-2013.10/bin/arm-gnueabi-
+
+export CROSS_COMPILE=/home/doadin/Desktop/kernel/toolchains/linaro_toolchains_2014-2014.03/arm-cortex_a8-linux-gnueabi-linaro_4.8.3-2014.03/bin/arm-gnueabi-
+
+su
+dmesg >/storage/sdcard1/dmesg.txt
+logcat -d -v time >/mnt/sdcard/logcat.txt 
+
+msm_batt_check_level
+
+#fresh
+1.Repo
+mkdir ~/bin
+curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo 
+chmod a+x ~/bin/repo
+
+2.ROM Source
+mkdir ~/android/system
+cd ~/android/system
+repo init -u git://github.com/CyanogenMod/android.git -b ics
+repo sync -j16
+
+3.Prebuilts
+cd ~/android/system
+./vendor/cm/get-prebuilts
+
+cm-11.0
+
+

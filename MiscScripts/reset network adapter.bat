@@ -1,0 +1,1 @@
+netsh interface set interface "Local Area Connection" admin=disable & netsh interface set interface "Local Area Connection" admin=enable

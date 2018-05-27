@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch=".."
+           review="review.cyanogenmod.org" />
+
+  <remove-project name="CyanogenMod/android_frameworks_native" />
+  <remove-project name="CyanogenMod/android_frameworks_base" />
+  <remove-project name="CyanogenMod/android_frameworks_av" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_display" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_audio" />
+  
+  <!-- Device Repos -->
+  <project path="device/samsung/ancora" name="arco/android_device_samsung_ancora_tmo" remote="github" revision="jellybean"/>
+  <project path="vendor/samsung/ancora" name="arco/android_vendor_samsung_ancora_tmo" remote="github" revision="jellybean"/>
+  <project path="kernel/samsung/ancora" name="arco/samsung-kernel-msm7x30" remote="github" revision="jb-3.0"/>
+  
+  <!-- Hardware Qcom -->
+  <project path="hardware/qcom/display" name="arco/android_hardware_qcom_display" remote="github" revision="jellybean"/>
+  <project path="hardware/qcom/audio" name="arco/android_hardware_qcom_audio" remote="github" revision="jellybean"/>
+  
+  <!-- Frame Work Pretty Static Across All Builds -->
+  <project path="frameworks/native" name="arco/android_frameworks_native" remote="github" revision="jellybean"/>
+  <project path="frameworks/base" name="arco/android_frameworks_base" remote="github" revision="jellybean"/>
+  <project path="frameworks/av" name="arco/android_frameworks_av" remote="github" revision="jellybean"/>
+  
+</manifest>

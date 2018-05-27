@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch=".."
+           review="review.cyanogenmod.org" />
+
+  <remove-project name="CyanogenMod/android_frameworks_native" />
+  <remove-project name="CyanogenMod/android_frameworks_base" />
+  <remove-project name="CyanogenMod/android_frameworks_av" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_display" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_audio" />
+  
+  <!-- Device Repos -->
+  <project path="device/samsung/ancora_tmo" name="arco/android_device_samsung_ancora_tmo" remote="github" revision="ics-3.0"/>
+  <project path="vendor/samsung/ancora_tmo" name="arco/android_vendor_samsung_ancora_tmo" remote="github" revision="ics-3.0"/>
+  <project path="kernel/samsung/ancora_tmo" name="arco/samsung-kernel-msm7x30" remote="github" revision="ics"/>
+  
+  <project path="device/samsung/ancora" name="arco/android_device_samsung_ancora_tmo" remote="github" revision="ics-3.0"/>
+  <project path="vendor/samsung/ancora" name="arco/android_vendor_samsung_ancora_tmo" remote="github" revision="ics-3.0"/>
+  <project path="kernel/samsung/ancora" name="arco/samsung-kernel-msm7x30" remote="github" revision="ics"/>
+  
+  <project path="device/samsung/ariesve" name="ivendor/android_device_samsung_ariesve" remote="github" revision="ics-3.0"/>
+  <project path="vendor/samsung/ariesve" name="ivendor/android_vendor_samsung_ariesve" remote="github" revision="ics"/>
+  <project path="kernel/samsung/ariesve" name="arco/samsung-kernel-msm7x30" remote="github" revision="ics-3.0"/>
+  
+  <!-- Hardware Qcom -->
+  <project path="hardware/qcom/display" name="arco/android_hardware_qcom_display" remote="github" revision="cm-9.0.0"/>
+  <project path="hardware/qcom/audio" name="arco/android_hardware_qcom_audio" remote="github" revision="cm-9.0.0"/>
+  
+  <!-- Frame Work Pretty Static Across All Builds -->
+  <project path="frameworks/native" name="arco/android_frameworks_native" remote="github" revision="cm-9.0.0"/>
+  <project path="frameworks/base" name="arco/android_frameworks_base" remote="github" revision="cm-9.0.0"/>
+  <project path="frameworks/av" name="arco/android_frameworks_av" remote="github" revision="cm-9.0.0"/>
+  
+</manifest>

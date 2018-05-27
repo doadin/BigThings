@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.17.0">
+      <projectUrl>https://github.com/doadin/deluge/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/doadin/deluge.git</url>
+        <credentialsId>1a25ba7a-1116-4f8e-8502-4398a06d84e6</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/develop</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.17.0">
+      <spec></spec>
+    </com.cloudbees.jenkins.GitHubPushTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!C:\Windows\System32\cmd
+REM echo &quot;cd &quot;C:\Jenkins\jobs\Deluge - Develop\workspace\&quot;&quot;
+REM echo &quot;&quot;C:\Program Files\Git\bin\git.exe&quot; log -1 --pretty=format:1.4.0-%h --abbrev-commit &gt;RELEASE-VERSION&quot;</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.BatchFile>
+      <command>cd &quot;C:\Python27\Lib\site-packages&quot;&#xd;
+for /f &quot;tokens=*&quot; %%f in (&apos;dir .\deluge* /ad/b&apos;) do rd &quot;%%f&quot; /s/q&#xd;
+cd C:\Python27\Scripts&#xd;
+del deluge*&#xd;
+cd C:\Jenkins\jobs\Deluge - Develop\workspace\&#xd;
+python setup.py clean -a&#xd;
+python minify_web_js.py deluge/ui/web/js/deluge-all&#xd;
+python setup.py build&#xd;
+python setup.py install&#xd;
+cd packaging\win32&#xd;
+python deluge-bbfreeze.py&#xd;
+CD ..&#xd;
+&quot;C:\Program Files (x86)\NSIS\makensis&quot; &quot;C:\Jenkins\jobs\Deluge - Develop\workspace\packaging\win32\deluge-win32-installer.nsi&quot;&#xd;
+move /y &quot;C:\Jenkins\jobs\Deluge - Develop\workspace\packaging\win32\build-win32\*.exe&quot; &quot;C:\deluge\builds&quot;</command>
+    </hudson.tasks.BatchFile>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.28">
+      <deleteDirs>false</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+  </buildWrappers>
+</project>

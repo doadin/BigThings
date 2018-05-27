@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch=".."
+           review="review.cyanogenmod.org" />
+
+  <remove-project name="CyanogenMod/android_frameworks_native" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_media-caf" />
+
+  
+  <!-- Device Repos -->
+  <project path="device/samsung/ancora_tmo" name="doadin/android_device_samsung_ancora_tmo" remote="github" revision="cm-10.1_ion_pmem"/>
+  <project path="vendor/samsung/ancora_tmo" name="doadin/android_vendor_samsung_ancora_tmo" remote="github" revision="cm-10.1_ion_pmem"/>
+  <project path="kernel/samsung/ancora_tmo" name="arco/samsung-kernel-msm7x30" remote="github" revision="cm-10.1_ion"/>
+  
+  <!-- Hardware Qcom -->
+  <!-- 
+  <project path="hardware/qcom/media-legacy" name="arco/android_hardware_qcom_media-legacy" remote="github" revision="cm-10.1"/>
+  <project path="hardware/qcom/display-legacy" name="arco/android_hardware_qcom_display-legacy" remote="github" revision="cm-10.1"/>
+  -->
+  
+  <project path="hardware/qcom/media-caf" name="AriesVE-DevCon-TEAM/android_hardware_qcom_media-caf" remote="github" revision="cm-10.1"/>
+
+  
+  <!-- Frame Work Pretty Static Across All Builds -->
+  <project path="frameworks/native" name="doadin/android_frameworks_native" remote="github" revision="cm-10.1"/>
+  
+  <!-- no longer Needed 
+  <project path="dalvik" name="doadin/android_dalvik" remote="github" revision="cm-10.2"/>
+  -->
+  
+</manifest>

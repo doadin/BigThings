@@ -1,0 +1,1 @@
+netsh interface set interface name = "Intel(R) Ethernet Connection (2) I218-V" newname = "Intel(R) Ethernet Connection I218-V"

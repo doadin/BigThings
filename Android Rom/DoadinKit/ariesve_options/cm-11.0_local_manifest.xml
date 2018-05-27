@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  
+  <remote  name="github"
+           fetch=".."
+           review="review.cyanogenmod.org" />
+
+  <remove-project name="CyanogenMod/android_frameworks_native" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_media-caf" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_display-caf" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_audio-caf" />
+  <remove-project name="CyanogenMod/android_vendor_cm" />
+
+  
+  <!-- Device Repos -->
+  
+  <project path="device/samsung/ariesve" name="AriesVE-DevCon-TEAM/android_device_samsung_ariesve" remote="github" revision="cm-11.0"/>
+  <project path="vendor/samsung/ariesve" name="AriesVE-DevCon-TEAM/android_vendor_samsung_ariesve" remote="github" revision="cm-11.0"/>
+  <project path="kernel/samsung/ariesve" name="AriesVE-DevCon-TEAM/samsung-kernel-msm7x30" remote="github" revision="cm-11.0"/> 
+  
+  <!-- Hardware Qcom -->
+
+  <project path="hardware/qcom/media-caf" name="doadin/android_hardware_qcom_media-caf" remote="github" revision="cm-11.0"/>
+  <project path="hardware/qcom/display-caf" name="doadin/android_hardware_qcom_display-caf" remote="github" revision="cm-11.0"/>
+  <project path="hardware/qcom/audio-caf" name="doadin/android_hardware_qcom_audio-caf" remote="github" revision="cm-11.0"/>
+  
+  <!-- Frame Work Pretty Static Across All Builds -->
+  <project path="frameworks/native" name="doadin/android_frameworks_native" remote="github" revision="cm-11.0"/>
+  <project path="vendor/cm" name="doadin/android_vendor_cm" remote="github" revision="cm-11.0"/>
+  
+  <!-- Temp Waiting Official Commits -->
+  <!-- http://review.cyanogenmod.org/#/c/47259/ -->
+  
+  
+  <!-- REPORTED NO LONGER NEEDED
+  
+  <remove-project name="CyanogenMod/android_frameworks_base" /> 
+  <project path="frameworks/base" name="doadin/android_frameworks_base" remote="github" revision="cm-10.2"/>
+  
+  <remove-project name="CyanogenMod/android_bionic" />
+  <project path="bionic" name="doadin/android_bionic" remote="github" revision="cm-10.2"/>
+  
+  <remove-project name="CyanogenMod/android_frameworks_opt_telephony" />
+  <project path="frameworks/opt/telephony" name="doadin/android_frameworks_opt_telephony" remote="github" revision="cm-10.2"/>
+  
+  -->
+  
+</manifest>

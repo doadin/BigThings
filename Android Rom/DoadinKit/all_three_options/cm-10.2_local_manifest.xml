@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  
+  <remote  name="github"
+           fetch=".."
+           review="review.cyanogenmod.org" />
+
+  <remove-project name="CyanogenMod/android_frameworks_native" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_media-caf" />
+  <remove-project name="CyanogenMod/android_hardware_qcom_display-caf" />
+  <!--
+  <remove-project name="CyanogenMod/android_hardware_qcom_audio-caf" />
+  <remove-project name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7" />
+  <remove-project name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7" />
+  -->
+  
+  <!-- Device Repos -->
+  <project path="device/samsung/ancora" name="arco/android_device_samsung_ancora" remote="github" revision="cm-10.2_ion"/>
+  <project path="vendor/samsung/ancora" name="arco/android_vendor_samsung_ancora" remote="github" revision="cm-10.2_ion"/>
+  <project path="kernel/samsung/ancora" name="arco/samsung-kernel-msm7x30" remote="github" revision="cm-10.2_ion"/> 
+  
+  <project path="device/samsung/ancora_tmo" name="doadin/android_device_samsung_ancora_tmo" remote="github" revision="cm-10.2_ion_pmem"/>
+  <project path="vendor/samsung/ancora_tmo" name="doadin/android_vendor_samsung_ancora_tmo" remote="github" revision="cm-10.1_ion_pmem"/>
+  <project path="kernel/samsung/ancora_tmo" name="arco/samsung-kernel-msm7x30" remote="github" revision="cm-10.2_ion"/> 
+  
+  <project path="device/samsung/ariesve" name="AriesVE-DevCon-TEAM/android_device_samsung_ariesve" remote="github" revision="cm-10.2"/>
+  <project path="vendor/samsung/ariesve" name="AriesVE-DevCon-TEAM/android_vendor_samsung_ariesve" remote="github" revision="cm-10.2"/>
+  <project path="kernel/samsung/ariesve" name="AriesVE-DevCon-TEAM/samsung-kernel-msm7x30" remote="github" revision="cm-10.2"/> 
+  
+  <!-- Hardware Qcom -->
+  <!-- 
+  <project path="hardware/qcom/media-legacy" name="arco/android_hardware_qcom_media-legacy" remote="github" revision="cm-10.2"/>
+  <project path="hardware/qcom/display-legacy" name="arco/android_hardware_qcom_display-legacy" remote="github" revision="cm-10.2"/>
+  -->
+  <project path="hardware/qcom/media-caf" name="AriesVE-DevCon-TEAM/android_hardware_qcom_media-caf" remote="github" revision="cm-10.2"/>
+  <project path="hardware/qcom/display-caf" name="AriesVE-DevCon-TEAM/android_hardware_qcom_display-caf" remote="github" revision="cm-10.2"/>
+  <!--
+  <project path="hardware/qcom/audio-caf" name="doadin/android_hardware_qcom_audio-caf" remote="github" revision="cm-10.2"/>
+  -->
+  
+  <!-- Frame Work Pretty Static Across All Builds -->
+  <project path="frameworks/native" name="doadin/android_frameworks_native" remote="github" revision="cm-10.2"/>
+  
+  <!-- Temp Waiting Official Commits -->
+  <!-- http://review.cyanogenmod.org/#/c/47259/ -->
+  
+  <!-- Temp?Hopefully(would be nice to be able to use linaro and such, Thanks Smartguy) 
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.7" name="doadin/prebuilts_gcc_linux-x86_arm_arm-eabi-4.7" remote="github" revision="cm-10.2" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.7" name="doadin/prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.7" remote="github" revision="cm-10.2" />
+  -->
+  
+  <!-- REPORTED NO LONGER NEEDED
+  
+  <remove-project name="CyanogenMod/android_frameworks_base" /> 
+  <project path="frameworks/base" name="doadin/android_frameworks_base" remote="github" revision="cm-10.2"/>
+  
+  <remove-project name="CyanogenMod/android_bionic" />
+  <project path="bionic" name="doadin/android_bionic" remote="github" revision="cm-10.2"/>
+  
+  <remove-project name="CyanogenMod/android_frameworks_opt_telephony" />
+  <project path="frameworks/opt/telephony" name="doadin/android_frameworks_opt_telephony" remote="github" revision="cm-10.2"/>
+  
+  -->
+  
+</manifest>
