@@ -3,11 +3,11 @@
 .gitignore export-ignore
 
 # Text Rules
-* text=auto
+* text=auto tab-in-indent,trailing-space
 
 # Script Rules
-*.sh text eol=lf
-*.bat text eol=crlf
+*.sh text eol=lf whitespace=tab-in-indent,trailing-space
+*.bat text eol=crlf whitespace=tab-in-indent,trailing-space
 
 # Image Rules
 *.jpg -text binary
@@ -41,34 +41,34 @@
 
 # Web Rules
 *.css           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
-*.df            text
+*.df            text whitespace=tab-in-indent,trailing-space
 *.engine        text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
-*.htm           text
+*.htm           text whitespace=tab-in-indent,trailing-space
 *.html          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=html
 *.inc           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
 *.info          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
 *.install       text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
-*.java          text
+*.java          text whitespace=tab-in-indent,trailing-space
 *.js            text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
 *.json          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
-*.jsp           text
-*.jspf          text
-*.jspx          text
+*.jsp           text whitespace=tab-in-indent,trailing-space
+*.jspf          text whitespace=tab-in-indent,trailing-space
+*.jspx          text whitespace=tab-in-indent,trailing-space
 *.lock          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
 *.md            text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
 *.module        text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
 *.php           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
 *.po            text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
-*.properties    text
+*.properties    text whitespace=tab-in-indent,trailing-space
 *.script        text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
-*.sh            text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+# *.sh            text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
 *.sql           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
-*.tag           text
-*.tagx          text
+*.tag           text whitespace=tab-in-indent,trailing-space
+*.tagx          text whitespace=tab-in-indent,trailing-space
 *.test          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
 *.theme         text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
-*.tld           text
-*.txt           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.tld           text whitespace=tab-in-indent,trailing-space
+*.txt           text eol=lf whitespace=tab-in-indent,trailing-space
 *.xml           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
 *.yml           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
 
@@ -85,15 +85,15 @@
 
 # C++
 ## sources
-*.c text
-*.cc text
-*.cxx text
-*.cpp text
-*.c++ text
-*.hpp text
-*.h text
-*.h++ text
-*.hh text
+*.c text whitespace=tab-in-indent,trailing-space
+*.cc text whitespace=tab-in-indent,trailing-space
+*.cxx text whitespace=tab-in-indent,trailing-space
+*.cpp text whitespace=tab-in-indent,trailing-space
+*.c++ text whitespace=tab-in-indent,trailing-space
+*.hpp text whitespace=tab-in-indent,trailing-space
+*.h text whitespace=tab-in-indent,trailing-space
+*.h++ text whitespace=tab-in-indent,trailing-space
+*.hh text whitespace=tab-in-indent,trailing-space
 ## Compiled Object files
 *.slo binary
 *.lo binary
@@ -117,14 +117,14 @@
 *.app binary
 
 # CSharp
-*.cs diff=csharp
+*.cs diff=csharp whitespace=tab-in-indent,trailing-space
 
 # Lua
-*.lua       text
+*.lua       text whitespace=tab-in-indent,trailing-space
 
 # Matlab
-*.m             text
-*.mu            text
+*.m             text whitespace=tab-in-indent,trailing-space
+*.mu            text whitespace=tab-in-indent,trailing-space
 # Binary files
 *.p             binary
 *.mex*          binary
@@ -144,16 +144,16 @@
 *.pbxproj binary -merge=union
 
 # Perl
-*.pl        text
-*.pm        text
+*.pl        text whitespace=tab-in-indent,trailing-space
+*.pm        text whitespace=tab-in-indent,trailing-space
 
 # Python
 # Source files
-*.pxd       text diff=python eol=crlf
-*.py        text diff=python eol=crlf
-*.py3       text diff=python eol=crlf
-*.pyw       text diff=python eol=crlf
-*.pyx       text diff=python eol=crlf
+*.pxd       text diff=python eol=crlf whitespace=tab-in-indent,trailing-space
+*.py        text diff=python eol=crlf whitespace=tab-in-indent,trailing-space
+*.py3       text diff=python eol=crlf whitespace=tab-in-indent,trailing-space
+*.pyw       text diff=python eol=crlf whitespace=tab-in-indent,trailing-space
+*.pyx       text diff=python eol=crlf whitespace=tab-in-indent,trailing-space
 # Binary files
 *.db        binary
 *.p         binary
@@ -164,39 +164,39 @@
 
 # R
 # Source files
-*.Rdata     text
+*.Rdata     text whitespace=tab-in-indent,trailing-space
 *.rdb       binary
 *.rds       binary
-*.Rd        text
+*.Rd        text whitespace=tab-in-indent,trailing-space
 *.Rdx       binary
-*.Rmd       text
-*.R         text
+*.Rmd       text whitespace=tab-in-indent,trailing-space
+*.R         text whitespace=tab-in-indent,trailing-space
 
 # Servoy
-*.frm -text
-*.val -text
-*.tbl -text
-*.rel -text
-*.dbi -text
-*.sec -text
+*.frm -text whitespace=tab-in-indent,trailing-space
+*.val -text whitespace=tab-in-indent,trailing-space
+*.tbl -text whitespace=tab-in-indent,trailing-space
+*.rel -text whitespace=tab-in-indent,trailing-space
+*.dbi -text whitespace=tab-in-indent,trailing-space
+*.sec -text whitespace=tab-in-indent,trailing-space
 
 # VisualStudio
-*.sln        text eol=crlf
-*.csproj     text eol=crlf
-*.vbproj     text eol=crlf
-*.vcxproj    text eol=crlf
-*.vcproj     text eol=crlf
-*.dbproj     text eol=crlf
-*.fsproj     text eol=crlf
-*.lsproj     text eol=crlf
-*.wixproj    text eol=crlf
-*.modelproj  text eol=crlf
-*.sqlproj    text eol=crlf
-*.wmaproj    text eol=crlf
-*.xproj      text eol=crlf
-*.props      text eol=crlf
-*.filters    text eol=crlf
-*.vcxitems   text eol=crlf
+*.sln        text eol=crlf whitespace=tab-in-indent,trailing-space
+*.csproj     text eol=crlf whitespace=tab-in-indent,trailing-space
+*.vbproj     text eol=crlf whitespace=tab-in-indent,trailing-space
+*.vcxproj    text eol=crlf whitespace=tab-in-indent,trailing-space
+*.vcproj     text eol=crlf whitespace=tab-in-indent,trailing-space
+*.dbproj     text eol=crlf whitespace=tab-in-indent,trailing-space
+*.fsproj     text eol=crlf whitespace=tab-in-indent,trailing-space
+*.lsproj     text eol=crlf whitespace=tab-in-indent,trailing-space
+*.wixproj    text eol=crlf whitespace=tab-in-indent,trailing-space
+*.modelproj  text eol=crlf whitespace=tab-in-indent,trailing-space
+*.sqlproj    text eol=crlf whitespace=tab-in-indent,trailing-space
+*.wmaproj    text eol=crlf whitespace=tab-in-indent,trailing-space
+*.xproj      text eol=crlf whitespace=tab-in-indent,trailing-space
+*.props      text eol=crlf whitespace=tab-in-indent,trailing-space
+*.filters    text eol=crlf whitespace=tab-in-indent,trailing-space
+*.vcxitems   text eol=crlf whitespace=tab-in-indent,trailing-space
 #*.sln       merge=binary
 #*.csproj    merge=binary
 #*.vbproj    merge=binary
@@ -216,84 +216,84 @@
 
 # Web
 ## SOURCE CODE
-*.coffee   text
-*.ini      text
-*.jsx      text
-*.less     text
-*.od       text
-*.onlydata text
-*.rb       text
-*.sass     text
-*.scm      text
-*.scss     text
-*.styl     text
-*.ts       text
-*.tsx      text
-*.xhtml    text
+*.coffee   text whitespace=tab-in-indent,trailing-space
+*.ini      text whitespace=tab-in-indent,trailing-space
+*.jsx      text whitespace=tab-in-indent,trailing-space
+*.less     text whitespace=tab-in-indent,trailing-space
+*.od       text whitespace=tab-in-indent,trailing-space
+*.onlydata text whitespace=tab-in-indent,trailing-space
+*.rb       text whitespace=tab-in-indent,trailing-space
+*.sass     text whitespace=tab-in-indent,trailing-space
+*.scm      text whitespace=tab-in-indent,trailing-space
+*.scss     text whitespace=tab-in-indent,trailing-space
+*.styl     text whitespace=tab-in-indent,trailing-space
+*.ts       text whitespace=tab-in-indent,trailing-space
+*.tsx      text whitespace=tab-in-indent,trailing-space
+*.xhtml    text whitespace=tab-in-indent,trailing-space
 ## DOCKER
-*.dockerignore    text
-Dockerfile    text
+*.dockerignore    text whitespace=tab-in-indent,trailing-space
+Dockerfile    text whitespace=tab-in-indent,trailing-space
 ## DOCUMENTATION
-*.markdown   text
-*.md         text
-*.mdwn       text
-*.mdown      text
-*.mkd        text
-*.mkdn       text
-*.mdtxt      text
-*.mdtext     text
-AUTHORS      text
-CHANGELOG    text
-CHANGES      text
-CONTRIBUTING text
-COPYING      text
-copyright    text
-*COPYRIGHT*  text
-INSTALL      text
-license      text
-LICENSE      text
-NEWS         text
-readme       text
-*README*     text
-TODO         text
+*.markdown   text whitespace=tab-in-indent,trailing-space
+*.md         text whitespace=tab-in-indent,trailing-space
+*.mdwn       text whitespace=tab-in-indent,trailing-space
+*.mdown      text whitespace=tab-in-indent,trailing-space
+*.mkd        text whitespace=tab-in-indent,trailing-space
+*.mkdn       text whitespace=tab-in-indent,trailing-space
+*.mdtxt      text whitespace=tab-in-indent,trailing-space
+*.mdtext     text whitespace=tab-in-indent,trailing-space
+AUTHORS      text whitespace=tab-in-indent,trailing-space
+CHANGELOG    text whitespace=tab-in-indent,trailing-space
+CHANGES      text whitespace=tab-in-indent,trailing-space
+CONTRIBUTING text whitespace=tab-in-indent,trailing-space
+COPYING      text whitespace=tab-in-indent,trailing-space
+copyright    text whitespace=tab-in-indent,trailing-space
+*COPYRIGHT*  text whitespace=tab-in-indent,trailing-space
+INSTALL      text whitespace=tab-in-indent,trailing-space
+license      text whitespace=tab-in-indent,trailing-space
+LICENSE      text whitespace=tab-in-indent,trailing-space
+NEWS         text whitespace=tab-in-indent,trailing-space
+readme       text whitespace=tab-in-indent,trailing-space
+*README*     text whitespace=tab-in-indent,trailing-space
+TODO         text whitespace=tab-in-indent,trailing-space
 ## TEMPLATES
-*.ejs        text
-*.haml       text
-*.handlebars text
-*.hbs        text
-*.hbt        text
-*.jade       text
-*.latte      text
-*.njk        text
-*.phtml      text
-*.tmpl       text
-*.tpl        text
-*.twig       text
+*.ejs        text whitespace=tab-in-indent,trailing-space
+*.haml       text whitespace=tab-in-indent,trailing-space
+*.handlebars text whitespace=tab-in-indent,trailing-space
+*.hbs        text whitespace=tab-in-indent,trailing-space
+*.hbt        text whitespace=tab-in-indent,trailing-space
+*.jade       text whitespace=tab-in-indent,trailing-space
+*.latte      text whitespace=tab-in-indent,trailing-space
+*.njk        text whitespace=tab-in-indent,trailing-space
+*.phtml      text whitespace=tab-in-indent,trailing-space
+*.tmpl       text whitespace=tab-in-indent,trailing-space
+*.tpl        text whitespace=tab-in-indent,trailing-space
+*.twig       text whitespace=tab-in-indent,trailing-space
 ## LINTERS
-.csslintrc    text
-.eslintrc     text
-.htmlhintrc   text
-.jscsrc       text
-.jshintrc     text
-.jshintignore text
-.stylelintrc  text
+.csslintrc    text whitespace=tab-in-indent,trailing-space
+.eslintrc     text whitespace=tab-in-indent,trailing-space
+.htmlhintrc   text whitespace=tab-in-indent,trailing-space
+.jscsrc       text whitespace=tab-in-indent,trailing-space
+.jshintrc     text whitespace=tab-in-indent,trailing-space
+.jshintignore text whitespace=tab-in-indent,trailing-space
+.stylelintrc  text whitespace=tab-in-indent,trailing-space
 ## CONFIGS
-*.bowerrc      text
-*.cnf          text
-*.conf         text
-*.config       text
-.browserslistrc    text
-.editorconfig  text
-.gitconfig     text
-.htaccess      text
-*.npmignore    text
-*.yaml         text
-browserslist   text
-Makefile       text
-makefile       text
+*.bowerrc      text whitespace=tab-in-indent,trailing-space
+*.cnf          text whitespace=tab-in-indent,trailing-space
+*.conf         text whitespace=tab-in-indent,trailing-space
+*.config       text whitespace=tab-in-indent,trailing-space
+.browserslistrc    text whitespace=tab-in-indent,trailing-space
+.editorconfig  text whitespace=tab-in-indent,trailing-space
+.gitconfig     text whitespace=tab-in-indent,trailing-space
+.htaccess      text whitespace=tab-in-indent,trailing-space
+*.npmignore    text whitespace=tab-in-indent,trailing-space
+*.yaml         text whitespace=tab-in-indent,trailing-space
+browserslist   text whitespace=tab-in-indent,trailing-space
+Makefile       text whitespace=tab-in-indent,trailing-space
+makefile       text whitespace=tab-in-indent,trailing-space
 ## HEROKU
-Procfile    text
-.slugignore text
+Procfile    text whitespace=tab-in-indent,trailing-space
+.slugignore text whitespace=tab-in-indent,trailing-space
 ## GRAPHICS
 *.ai   binary
 *.bmp  binary
@@ -303,7 +303,7 @@ Procfile    text
 *.jxr  binary
 *.psb  binary
 *.psd  binary
-*.svg  text
+*.svg  text whitespace=tab-in-indent,trailing-space
 *.svgz binary
 *.wbmp binary
 *.webp binary
