@@ -1,0 +1,87 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.0">
+      <projectUrl>https://github.com/arvidn/libtorrent/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.8.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/arvidn/libtorrent.git</url>
+        <credentialsId>1a25ba7a-1116-4f8e-8502-4398a06d84e6</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/RC_1_1</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.CleanBeforeCheckout/>
+    </extensions>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.BatchFile>
+      <command>FOR /F &quot;TOKENS=1 eol=/ DELIMS=/ &quot; %%A IN (&apos;DATE/T&apos;) DO SET dd=%%A&#xd;
+FOR /F &quot;TOKENS=1,2 eol=/ DELIMS=/ &quot; %%A IN (&apos;DATE/T&apos;) DO SET mm=%%B&#xd;
+FOR /F &quot;TOKENS=1,2,3 eol=/ DELIMS=/ &quot; %%A IN (&apos;DATE/T&apos;) DO SET yyyy=%%C&#xd;
+SET todaysdate=%yyyy%%mm%%dd%&#xd;
+echo %dd%&#xd;
+echo %mm%&#xd;
+echo %yyyy%&#xd;
+echo %todaysdate%&#xd;
+echo %WORKSPACE%&#xd;
+&#xd;
+call &quot;c:\program files (x86)\microsoft visual studio 9.0\vc\bin\vcvars32.bat&quot;&#xd;
+set INCLUDE=C:\Build-OpenSSL_1_1_0-110-VC9-32-Jenkins\include\openssl;%INCLUDE%&#xd;
+set LIB=C:\Build-OpenSSL_1_1_0-110-VC9-32-Jenkins\lib;%LIB%&#xd;
+set BOOST_ROOT=C:\boost_1_63_0&#xd;
+set BOOST_BUILD_PATH=%BOOST_ROOT%&#xd;
+set VS_PATH=C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin&#xd;
+set PYTHON_PATH=C:\Python27&#xd;
+set OPENSSL_PATH=C:\Build-OpenSSL_1_1_0-110-VC9-32-Jenkins\bin&#xd;
+set PATH=%BOOST_ROOT%;%VS_PATH%;%PYTHON_PATH%;%OPENSSL_PATH%;%PATH%&#xd;
+&#xd;
+del /S /Q C:\Users\doadin\AppData\Local\Temp\*&#xd;
+del /S /Q C:\tmp\*&#xd;
+&#xd;
+cd &quot;%WORKSPACE%\bindings\python&quot;&#xd;
+&#xd;
+b2 libtorrent-link=static boost-link=static release toolset=msvc-9.0 optimization=space runtime-link=static link=static variant=release crypto=openssl include=C:\Build-OpenSSL_1_1_0-110-VC9-32-Jenkins\include openssl-version=1.1 linkflags=/LIBPATH:C:\Build-OpenSSL_1_1_0-110-VC9-32-Jenkins\lib -j%NUMBER_OF_PROCESSORS% --hash&#xd;
+&#xd;
+@REM copy /y %WORKSPACE%\bindings\python\bin\msvc-9.0\release\boost-link-static\libtorrent-link-static\link-static\optimization-space\runtime-link-static\libtorrent.pyd C:\libtorrent\builds\RC_1_1\libtorrent-%GIT_COMMIT%-%todaysdate%.pyd&#xd;
+&#xd;
+@REM copy /y %WORKSPACE%\bindings\python\bin\msvc-9.0\release\boost-link-static\libtorrent-link-static\link-static\optimization-space\runtime-link-static\libtorrent.pyd C:\Python27\Lib\site-packages\libtorrent.pyd&#xd;
+&#xd;
+cd &quot;%WORKSPACE%\bindings\python\bin&quot;&#xd;
+&#xd;
+dir/s/b|for /f %%i in (&apos;find &quot;libtorrent.pyd&quot;&apos;) do copy &quot;%%i&quot; .\&#xd;
+copy libtorrent.pyd C:\libtorrent\builds\RC_1_1\libtorrent-%GIT_COMMIT%-%todaysdate%.pyd /v /y&#xd;
+copy libtorrent.pyd C:\Python27\Lib\site-packages\libtorrent.pyd /v /y&#xd;
+&#xd;
+cd &quot;C:\libtorrent\builds\RC_1_1&quot;&#xd;
+&#xd;
+echo libtorrent version &gt;&gt; buildinfo-%GIT_COMMIT%-%todaysdate%.txt&#xd;
+python -c &quot;import libtorrent; print libtorrent.version&quot; &gt;&gt; buildinfo-%GIT_COMMIT%-%todaysdate%.txt&#xd;
+C:\Build-OpenSSL_1_1_0-110-VC9-32-Jenkins\bin\openssl.exe version &gt;&gt; buildinfo-%GIT_COMMIT%-%todaysdate%.txt&#xd;
+echo msvc-9.0 &gt;&gt; buildinfo-%GIT_COMMIT%-%todaysdate%.txt&#xd;
+echo boost 1.63.0 &gt;&gt; buildinfo-%GIT_COMMIT%-%todaysdate%.txt</command>
+    </hudson.tasks.BatchFile>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
