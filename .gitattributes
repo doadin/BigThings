@@ -1,0 +1,346 @@
+.gitattributes export-ignore text
+.gitmodules export-ignore
+.gitignore export-ignore
+
+# Text Rules
+* text=auto
+
+# Script Rules
+*.sh text eol=lf
+*.bat text eol=crlf
+
+# Image Rules
+*.jpg -text binary
+*.jpeg -text binary
+*.gif -text binary
+*.png -text binary
+*.tif -text binary
+*.tiff -text binary
+*.ico -text binary
+*.eps -text binary
+
+# Document Rules
+*.pdf diff=astextplain binary
+*.PDF diff=astextplain binary
+*.doc diff=astextplain
+*.DOC diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot diff=astextplain text
+*.DOT diff=astextplain text
+*.rtf diff=astextplain
+*.RTF diff=astextplain
+*.md text
+*.adoc text
+*.textile text
+*.mustache text
+*.csv text
+*.tab text
+*.tsv text
+*.sql text
+
+# Web Rules
+*.css           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.df            text
+*.engine        text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+*.htm           text
+*.html          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=html
+*.inc           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+*.info          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.install       text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+*.java          text
+*.js            text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.json          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.jsp           text
+*.jspf          text
+*.jspx          text
+*.lock          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.md            text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.module        text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+*.php           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+*.po            text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.properties    text
+*.script        text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.sh            text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+*.sql           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.tag           text
+*.tagx          text
+*.test          text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+*.theme         text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
+*.tld           text
+*.txt           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.xml           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+*.yml           text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
+
+*.class         binary
+*.ear           binary
+*.jar           binary
+*.war           binary
+*.so            binary
+
+# ActionScript
+*.swf -crlf -diff -merge binary
+*.swc -crlf -diff -merge binary
+*.fla -crlf -diff -merge
+
+# C++
+## sources
+*.c text
+*.cc text
+*.cxx text
+*.cpp text
+*.c++ text
+*.hpp text
+*.h text
+*.h++ text
+*.hh text
+## Compiled Object files
+*.slo binary
+*.lo binary
+*.o binary
+*.obj binary
+## Precompiled Headers
+*.gch binary
+*.pch binary
+## Compiled Dynamic libraries
+*.so binary
+*.dylib binary
+*.dll binary
+## Compiled Static libraries
+*.lai binary
+*.la binary
+*.a binary
+*.lib binary
+## Executables
+*.exe binary
+*.out binary
+*.app binary
+
+# CSharp
+*.cs diff=csharp
+
+# Lua
+*.lua       text
+
+# Matlab
+*.m             text
+*.mu            text
+# Binary files
+*.p             binary
+*.mex*          binary
+*.fig           binary
+*.mat           binary
+*.mdl           binary
+*.slx           binary
+*.mdlp          binary
+*.slxp          binary
+*.sldd          binary
+*.mltbx         binary
+*.mlappinstall  binary
+*.mlpkginstall  binary
+*.mn            binary
+
+# ObjectiveC
+*.pbxproj binary -merge=union
+
+# Perl
+*.pl        text
+*.pm        text
+
+# Python
+# Source files
+*.pxd       text diff=python eol=crlf
+*.py        text diff=python eol=crlf
+*.py3       text diff=python eol=crlf
+*.pyw       text diff=python eol=crlf
+*.pyx       text diff=python eol=crlf
+# Binary files
+*.db        binary
+*.p         binary
+*.pkl       binary
+*.pyc       binary
+*.pyd       binary
+*.pyo       binary
+
+# R
+# Source files
+*.Rdata     text
+*.rdb       binary
+*.rds       binary
+*.Rd        text
+*.Rdx       binary
+*.Rmd       text
+*.R         text
+
+# Servoy
+*.frm -text
+*.val -text
+*.tbl -text
+*.rel -text
+*.dbi -text
+*.sec -text
+
+# VisualStudio
+*.sln        text eol=crlf
+*.csproj     text eol=crlf
+*.vbproj     text eol=crlf
+*.vcxproj    text eol=crlf
+*.vcproj     text eol=crlf
+*.dbproj     text eol=crlf
+*.fsproj     text eol=crlf
+*.lsproj     text eol=crlf
+*.wixproj    text eol=crlf
+*.modelproj  text eol=crlf
+*.sqlproj    text eol=crlf
+*.wmaproj    text eol=crlf
+*.xproj      text eol=crlf
+*.props      text eol=crlf
+*.filters    text eol=crlf
+*.vcxitems   text eol=crlf
+#*.sln       merge=binary
+#*.csproj    merge=binary
+#*.vbproj    merge=binary
+#*.vcxproj   merge=binary
+#*.vcproj    merge=binary
+#*.dbproj    merge=binary
+#*.fsproj    merge=binary
+#*.lsproj    merge=binary
+#*.wixproj   merge=binary
+#*.modelproj merge=binary
+#*.sqlproj   merge=binary
+#*.wwaproj   merge=binary
+#*.xproj     merge=binary
+#*.props     merge=binary
+#*.filters   merge=binary
+#*.vcxitems  merge=binary
+
+# Web
+## SOURCE CODE
+*.coffee   text
+*.ini      text
+*.jsx      text
+*.less     text
+*.od       text
+*.onlydata text
+*.rb       text
+*.sass     text
+*.scm      text
+*.scss     text
+*.styl     text
+*.ts       text
+*.tsx      text
+*.xhtml    text
+## DOCKER
+*.dockerignore    text
+Dockerfile    text
+## DOCUMENTATION
+*.markdown   text
+*.md         text
+*.mdwn       text
+*.mdown      text
+*.mkd        text
+*.mkdn       text
+*.mdtxt      text
+*.mdtext     text
+AUTHORS      text
+CHANGELOG    text
+CHANGES      text
+CONTRIBUTING text
+COPYING      text
+copyright    text
+*COPYRIGHT*  text
+INSTALL      text
+license      text
+LICENSE      text
+NEWS         text
+readme       text
+*README*     text
+TODO         text
+## TEMPLATES
+*.ejs        text
+*.haml       text
+*.handlebars text
+*.hbs        text
+*.hbt        text
+*.jade       text
+*.latte      text
+*.njk        text
+*.phtml      text
+*.tmpl       text
+*.tpl        text
+*.twig       text
+## LINTERS
+.csslintrc    text
+.eslintrc     text
+.htmlhintrc   text
+.jscsrc       text
+.jshintrc     text
+.jshintignore text
+.stylelintrc  text
+## CONFIGS
+*.bowerrc      text
+*.cnf          text
+*.conf         text
+*.config       text
+.browserslistrc    text
+.editorconfig  text
+.gitconfig     text
+.htaccess      text
+*.npmignore    text
+*.yaml         text
+browserslist   text
+Makefile       text
+makefile       text
+## HEROKU
+Procfile    text
+.slugignore text
+## GRAPHICS
+*.ai   binary
+*.bmp  binary
+*.jng  binary
+*.jp2  binary
+*.jpx  binary
+*.jxr  binary
+*.psb  binary
+*.psd  binary
+*.svg  text
+*.svgz binary
+*.wbmp binary
+*.webp binary
+## AUDIO
+*.kar  binary
+*.m4a  binary
+*.mid  binary
+*.midi binary
+*.mp3  binary
+*.ogg  binary
+*.ra   binary
+## VIDEO
+*.3gpp binary
+*.3gp  binary
+*.as   binary
+*.asf  binary
+*.asx  binary
+*.fla  binary
+*.flv  binary
+*.m4v  binary
+*.mng  binary
+*.mov  binary
+*.mp4  binary
+*.mpeg binary
+*.mpg  binary
+*.ogv  binary
+*.webm binary
+## ARCHIVES
+*.7z  binary
+*.gz  binary
+*.jar binary
+*.rar binary
+*.tar binary
+*.zip binary
+## FONTS
+*.ttf   binary
+*.eot   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
