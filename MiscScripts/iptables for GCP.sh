@@ -3,7 +3,7 @@
 # $IPT script generated 2019-07-18
 # http://www.mista.nu/$IPT
 
-IPT="/sbin/$IPT"
+IPT="/sbin/iptables"
 
 # Flush old rules, old custom tables
 $IPT --flush
