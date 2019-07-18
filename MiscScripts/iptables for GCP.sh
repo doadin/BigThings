@@ -44,8 +44,8 @@ $IPT -A OUTPUT -o eth0 -p tcp --dport 53 -m state --state NEW,ESTABLISHED -j ACC
 # SSH
 #----------
 # Incoming
-$IPT -A INPUT -i eth0 -p tcp --dport 22022 -m state --state NEW,ESTABLISHED -j ACCEPT
-$IPT -A OUTPUT -o eth0 -p tcp --sport 22022 -m state --state ESTABLISHED -j ACCEPT
+$IPT -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+$IPT -A OUTPUT -o eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
 # Outgoing
 $IPT -A INPUT -i eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
 $IPT -A OUTPUT -o eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
